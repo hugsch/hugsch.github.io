@@ -23,12 +23,52 @@
   
   <url>
     <loc>https://hugsch.github.io/categories/</loc>
-    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/tags/python/</loc>
+    <lastmod>2021-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/categories/python/</loc>
+    <lastmod>2021-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/posts/script_editor/</loc>
+    <lastmod>2021-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/categories/scripting/</loc>
+    <lastmod>2021-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/tags/</loc>
+    <lastmod>2021-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hugsch.github.io/categories/color/</loc>
-    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/tags/ffmpeg/</loc>
+    <lastmod>2021-01-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/posts/ffmpeg/</loc>
+    <lastmod>2021-01-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/categories/geometry/</loc>
+    <lastmod>2021-01-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -43,16 +83,6 @@
   
   <url>
     <loc>https://hugsch.github.io/tags/color-space/</loc>
-    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hugsch.github.io/categories/geometry/</loc>
-    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hugsch.github.io/tags/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url>
   

@@ -6,7 +6,17 @@
     <description>Recent content in color on Beyond the Obvious</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hugsch.github.io/categories/color/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hugsch.github.io/categories/color/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FFMPEG useful commands</title>
+      <link>https://hugsch.github.io/posts/ffmpeg/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hugsch.github.io/posts/ffmpeg/</guid>
+      <description>FFMPEG is a command line tool for handling (decode, encode, convert, &amp;hellip;) video and audio files. It is used by many commercial and free software products, including Blender. The core is the FFMPEG program, together with a video &amp;amp; audio player (FFPLAY) and a stream analyzer (FFPROBE).
+1. Generate testfiles Sometimes you need a test video or test image with a specific resolution, duration or framerate. You can first try with ffplay to view the test video.</description>
+    </item>
+    
     <item>
       <title>Color Picker</title>
       <link>https://hugsch.github.io/posts/color_picker/</link>

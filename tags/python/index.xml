@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Beyond the Obvious</title>
+    <link>https://hugsch.github.io/tags/python/</link>
+    <description>Recent content in python on Beyond the Obvious</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hugsch.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Script Editor</title>
+      <link>https://hugsch.github.io/posts/script_editor/</link>
+      <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hugsch.github.io/posts/script_editor/</guid>
+      <description>Blender has a dedicated workspace &amp;ldquo;Scripting&amp;rdquo; with 7 windows (areas): the Text Editor (middle area), the Info editor (left bottom), the Python console (left middle) and the 3D Viewport (left top). At the right you find the Properties window (bottom) and two versions of the outliner (top); see fig. 1.
+Fig 1. The scripting workspace (2.92 in 2021)
+You can use the built-in text editor to write and test your code.</description>
+    </item>
+    
+  </channel>
+</rss>
