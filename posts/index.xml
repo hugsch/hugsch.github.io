@@ -6,11 +6,11 @@
     <description>Recent content in Posts on Beyond the Obvious</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hugsch.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hugsch.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Additive color diagram</title>
+      <title>Additive color mix diagram</title>
       <link>https://hugsch.github.io/posts/additive_color_mix/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://hugsch.github.io/posts/additive_color_mix/</guid>
       <description>In this journey, I will try to recreate the additive color mix diagram in Blender. As usual, there are several possibilities.

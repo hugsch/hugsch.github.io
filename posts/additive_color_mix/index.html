@@ -3,8 +3,9 @@
     <head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="description" content="The additive color mix diagram recreated.">
 
-		<title>Additive color diagram &middot; Beyond the Obvious</title>
+		<title>Additive color mix diagram &middot; Beyond the Obvious</title>
 
 		
   		<link rel="stylesheet" href="/css/style.css">
@@ -53,10 +54,12 @@
 	<div class="post">
 		<div class="post-info">
     <span>Written by</span>
-        
+        hugsch
+        <br>
+        <span>on&nbsp;</span><time datetime="2021-01-25 00:00:00 &#43;0000 UTC">January 25, 2021</time>
 </div>
 
-		<h1 class="post-title">Additive color diagram</h1>
+		<h1 class="post-title">Additive color mix diagram</h1>
 <div class="post-line"></div>
 
 		
@@ -65,7 +68,7 @@
 <h2 id="1-three-colored-spotlights">1. Three colored spotlights</h2>
 <p>The easiest solution is to create three spot lights. So, start Blender, delete the default cube and the light. Switch to top view; add three lights of type spotlight and a plane.</p>
 <figure>
-    <img src="../images/additive-diagram-3-spots-setup.jpg"/> <figcaption>
+    <img src="/images/additive_color_mix_3_spots_setup.jpg"/> <figcaption>
             <h4>Figure 1: Blender setup for the three colored spot-lights solution</h4>
         </figcaption>
 </figure>
@@ -78,7 +81,7 @@
 <li>You need also to position the camera at location (0,0, 10) and change the view to camera view (Alt+Ctrl+0). Then you can render the image.</li>
 </ol>
 <figure>
-    <img src="../images/additive-diagram-3-spots-render.png"/> <figcaption>
+    <img src="/images/additive_color_mix_3_spots_render.png"/> <figcaption>
             <h4>Figure 2: Evee render of setup from figure 1</h4>
         </figcaption>
 </figure>
@@ -95,7 +98,7 @@
 <li>Repeat step 5 for the third color.</li>
 <li>Create three fill materials, select all the points from the first circle and assign a fill color to them. Repeat for the other two circles.</li>
 <li>Note that (1) the last drawn circle will occlude the other two and (2) the colors look terrible.</li>
-<li>Change the blend mode of the last two drawn circles from regular to Add to fix the occlusion problem. Add a sun light to the scene to get brighter colors. But once again, check the color intensities in render view and note thatthe intensities go way well over 1 (depending on the strength of your sun light).</li>
+<li>Change the blend mode of the last two drawn circles from regular to Add to fix the occlusion problem. Add a sun light to the scene to get brighter colors. But once again, check the color intensities in render view and note that the intensities go way well over 1 (depending on the strength of your sun light).</li>
 </ol>
 
 
@@ -113,7 +116,7 @@
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2021-01-25 19:45:08.0226837 &#43;0100 CET m=&#43;0.076194601">2021</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2021-01-25 20:04:47.628941 &#43;0100 CET m=&#43;0.071807801">2021</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 
