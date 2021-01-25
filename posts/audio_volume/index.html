@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Audio volume slider &middot; Beyond the Obvious</title>
+
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Beyond the Obvious" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Beyond the Obvious</h2>
+				</a>
+				<ul>
+    
+    
+        <li>
+            <a href="/pages/">
+                
+                <span>About</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/posts/">
+                
+                <span>Posts</span>
+                
+            </a>
+        </li>
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        hugsch
+        <br>
+        <span>on&nbsp;</span><time datetime="2021-01-22 00:00:00 &#43;0000 UTC">January 22, 2021</time>
+</div>
+
+		<h1 class="post-title">Audio volume slider</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>Every program that works with audio has some sort of volume slider. And, they all have different meanings! In Blender, you can find it as a Property of the Audio Strip. It is a number between 0 and 100. A value &gt; 1 will amplify the sound; a value &lt; 1 will decrease the sound level. Simple, isn&rsquo;t it? But how loud is a volume level of 0.5? Is it half as loud as 1.0? And what about the max value of 100? Really? One hundred?</p>
+<h1 id="1-whats-the-relationship-between-volume-level-value-and-loudness">1) What&rsquo;s the relationship between Volume level value and loudness?</h1>
+<p>You can calculate the gain or loss in decibels (dB) with the following formula:</p>
+<ul>
+<li>dB = 20 x log (volume level)</li>
+<li>volume level = antilog (dB/20)</li>
+</ul>
+<p>So, if you decrease the volume level to 0.5, this will result in a loss of -6 dB. Increasing the volume level to 100 will result in a gain of 20 x log(100) = 40 db. You can use the antilog function (10<sup>x</sup>) of a calculator to do the inverse: antilog(-6dB/20) = 0.5012.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">dB loss/gain</th>
+<th style="text-align:left">-40<img width="50"></th>
+<th style="text-align:center">-30<img width="50"></th>
+<th style="text-align:left">-20<img width="50"></th>
+<th style="text-align:left">-10<img width="50"></th>
+<th style="text-align:left">-6<img width="50"></th>
+<th style="text-align:left">0<img width="50"></th>
+<th style="text-align:left">+6<img width="50"></th>
+<th style="text-align:left">+10<img width="50"></th>
+<th style="text-align:left">+20<img width="50"></th>
+<th style="text-align:left">+30<img width="50"></th>
+<th style="text-align:left">+40<img width="50"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Volume level <img width="150"></td>
+<td style="text-align:left">0.01</td>
+<td style="text-align:center">0.0316</td>
+<td style="text-align:left">0.1</td>
+<td style="text-align:left">0.316</td>
+<td style="text-align:left">0.501</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1.995</td>
+<td style="text-align:left">3.162</td>
+<td style="text-align:left">10</td>
+<td style="text-align:left">31.62</td>
+<td style="text-align:left">100<br /><br /></td>
+</tr>
+</tbody>
+</table>
+<p>According to psychological research, perceived loudness is doubled every 10 dB. So, to make a sound twice as loud, you have to set the volume level to antilog(+10dB/20) = 3.16. To reduce the perceived sound to half, you have to decrease the volume level to antilog(-10dB/20) = 0.316.</p>
+<p>Remember that decibel is not a linear but a logarithmic scale. This is the reason of the asymmetrical Volume slider (0 - 100) instead of 0 - 1. If you set the slider to +100, you&rsquo;ll increase the loudness with 40 dB. To decrease the loudness with the same amount, you&rsquo;ll have to set the volume to 0.01. A handy conversion table can be found at <a href="https://en.wikipedia.org/wiki/Decibel">Wikipedia</a>.</p>
+<p>When a sound is digitized, the analog sound wave is sampled at discrete moments in time and the amplitude (the loudness) of the wave is stored. Two concepts are very important:</p>
+<ul>
+<li>Sample rate: a typical sample rate is 44.100 Hz (audio CD quality), which means that 44100 samples per second are taken. More samples results in better quality but also higher storage needs.</li>
+<li>Bit depth:  at each sample the amplitude of the analog sound wave is converted to a voltage that is stored in a number, typically a 16 or 24 bit integer. Because a 16 bit integer has only 2<sup>16</sup> = 65536 values, there will be a maximum amplitude that can be represented. These numbers are converted to a floating point number between -1 and +1. Amplitudes that exceed these thresholds (-1 or +1) will be clipped at -1 or +1  and result in distortion.</li>
+</ul>
+<p>The volume or loudness of a sound is a perceptual/psychological phenomenon. As such, the loudness of a sound is influenced by many factors: the amplitude of the sound wave but also the frequency (bass tones need more power), the environment (e.g. distance to the sound source), the habituation of the listener, &hellip; To simplify the following discussion, we reduce loudness (a psychological phenomenon) to the amplitude or voltage of the sound wave (a physical phenomenon).</p>
+<p>The decibel scale is a relative scale; it&rsquo;s the ratio of a sound compared to some reference sound. For digital sound the reference is a sound with an amplitude of +1V or the maximum amplitude that can be stored with the chosen bit depth. Because of this definition - dB = log(sample voltage/1 V) - the dB value of a sample voltage = 1V is zero, because log(1/1) = 0. Zero dB is thus the maximum sound level we can have without distortion. Decreasing the sound level will result in a negative dB.</p>
+<h1 id="2-how-to-calculate-the-db-value-in-blender-python">2) How to calculate the dB value in Blender Python?</h1>
+<p>The attached blend-file contains a Python script to calculate the dB value of a sound strip, as well as some other sound-parameters. The code is based on <a href="https://github.com/snuq/VSEQF">Snuq&rsquo;s VSEQF-addon</a> (vu_meter.py). As example we use Blender&rsquo;s open movie <a href="https://www.youtube.com/watch?v=WhWc3b3KhnY">Spring</a>.</p>
+<p>You first need a handle to the selected audio strip and the sound data that it contains. Because strip properties (eg Volume) can be animated, we need access to the animated data blocks which are continuously updated in the dependency graph for the current scene and view layer.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> bpy
+<span style="color:#f92672">import</span> math
+
+strip <span style="color:#f92672">=</span> bpy<span style="color:#f92672">.</span>context<span style="color:#f92672">.</span>scene<span style="color:#f92672">.</span>sequence_editor<span style="color:#f92672">.</span>active_strip
+depsgraph <span style="color:#f92672">=</span> bpy<span style="color:#f92672">.</span>context<span style="color:#f92672">.</span>evaluated_depsgraph_get()
+sound <span style="color:#f92672">=</span> strip<span style="color:#f92672">.</span>sound<span style="color:#f92672">.</span>evaluated_get(depsgraph)<span style="color:#f92672">.</span>factory
+</code></pre></div><h2 id="21-db-value-for-the-whole-strip">2.1 dB value for the whole strip</h2>
+<p>There are quite a few measures. The most used are:</p>
+<ul>
+<li>Peak value: what is the highest/lowest dB value in the strip. This is what you see in Volume Meter(VU-meter).</li>
+<li>RMS (Root-Mean-Squared): the average dB of the whole strip.</li>
+</ul>
+<p>First, we need access to the sampled data. This is a two dimensional numpy float array. The first dimension is the number of samples. The second is the number of channels (1 for mono, 2 for stereo). The values are floating point numbers between 0 - 1.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">max <span style="color:#f92672">=</span> sound<span style="color:#f92672">.</span>data()<span style="color:#f92672">.</span>max()
+min <span style="color:#f92672">=</span> sound<span style="color:#f92672">.</span>data()<span style="color:#f92672">.</span>min()
+
+<span style="color:#66d9ef">if</span> abs(max) <span style="color:#f92672">&gt;</span> abs(min):
+    peak <span style="color:#f92672">=</span> abs(max)
+<span style="color:#66d9ef">else</span>:
+    peak <span style="color:#f92672">=</span> abs(min)
+
+db <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>log10(peak)
+</code></pre></div><p>The data()-method of the Sound-object returns the sampled data for the entire strip, even if the strip is trimmed and without the Volume-level applied. In other words, these are the raw sampled data. The peak value of a sound, however, is sometimes not a good estimate of the loudness of the sound. We need some kind of average. Because a sound-wave contains positive and negative sample values, a simple average will cancel out to about zero-level. A RMS value is the solution. Each sample value is squared (eliminating the negative numbers), then the mean (average) of these squares is calculated and reduced again to the original level with a square root.</p>
+<p>Because the sampled data are contained in a numpy array, the code is relatively simple.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">samples <span style="color:#f92672">=</span> sound<span style="color:#f92672">.</span>data()
+m <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(samples<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+rms <span style="color:#f92672">=</span>  np<span style="color:#f92672">.</span>sqrt(m)
+db <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>log10(rms)
+</code></pre></div><h2 id="22-db-value-of-the-current-frame-or-a-section-of-a-strip">2.2 dB value of the current frame or a section of a strip</h2>
+<p>Suppose, you want the dB value for the sound samples underneath the playhead/cursor in the timeline. Audio strips however work with time code, not frames. This is the cause of many misunderstandings. For example, if you have a MP4-file (video + audio) and you change the frame-per-second parameter of the scene, then the length of the video will change but not the length of the audio strip. The duration of an audio-strip can be calculated, based on the sample rate and the number of samples.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sample_rate <span style="color:#f92672">=</span> sound<span style="color:#f92672">.</span>specs[<span style="color:#ae81ff">0</span>]
+nr_of_samples <span style="color:#f92672">=</span> sound<span style="color:#f92672">.</span>length
+duration <span style="color:#f92672">=</span> nr_of_samples<span style="color:#f92672">/</span>sample_rate
+</code></pre></div><p>You would expect that sound.length is equal to len(sound.data()) but apparently that&rsquo;s not true. For the open movie spring: sound.length = 20466685 and len(sound.data() = 20466688.</p>
+<p>Because there are many more samples than frames, the sound data for each frame will contain several samples.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">nr_of_frames <span style="color:#f92672">=</span> strip<span style="color:#f92672">.</span>frame_final_end
+nr_of_samples_per_frame <span style="color:#f92672">=</span> nr_of_samples<span style="color:#f92672">/</span>nr_of_frames
+</code></pre></div><p>In case of the open movie &ldquo;Spring&rdquo;: duration = 464.1s, nr_of_frames = 11139 and nr_of_sample_per_frame = 1837.38. So, for each frame there are 1837 samples. To calculate the dB value underneath the playhead, we need the peak or rms value of these 1837 samples.</p>
+<p>You can access these samples with the limit-method. This method works with timecode. So, you need the start and end time code of the current frame. These start and end times are relative to the selected strip. The first frame of the selected strip is zero. The current frame however is relative to the timeline. So, you have to subtract the strip.frame_start from the current frame. The calculation of the db or RMS value is the same as above.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cur_frame <span style="color:#f92672">=</span> bpy<span style="color:#f92672">.</span>context<span style="color:#f92672">.</span>scene<span style="color:#f92672">.</span>frame_current
+fps <span style="color:#f92672">=</span> bpy<span style="color:#f92672">.</span>context<span style="color:#f92672">.</span>scene<span style="color:#f92672">.</span>render<span style="color:#f92672">.</span>fps <span style="color:#f92672">/</span> bpy<span style="color:#f92672">.</span>context<span style="color:#f92672">.</span>scene<span style="color:#f92672">.</span>render<span style="color:#f92672">.</span>fps_base
+time_from <span style="color:#f92672">=</span> (cur_frame <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> strip<span style="color:#f92672">.</span>frame_start) <span style="color:#f92672">/</span> fps
+time_to <span style="color:#f92672">=</span> (cur_frame <span style="color:#f92672">-</span> strip<span style="color:#f92672">.</span>frame_start) <span style="color:#f92672">/</span> fps
+sound_cur_frame <span style="color:#f92672">=</span> sound<span style="color:#f92672">.</span>limit(time_from, time_to)
+</code></pre></div><h2 id="23-the-decibel-value-of-a-trimmed-strip">2.3 The decibel value of a trimmed strip</h2>
+<p>Because the Data method of a Sound object always returns all samples of the entire strip, you also have to use the limit-method (see above section 2.2) for a trimmed strip. <a href="../video/trimming.md">Trimming and cutting</a> of a strip is extensively described in a separate post. Fig. 3 summarizes the different achor points.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">time_from <span style="color:#f92672">=</span> (strip<span style="color:#f92672">.</span>frame_final_start <span style="color:#f92672">-</span> strip<span style="color:#f92672">.</span>frame_start)<span style="color:#f92672">/</span>fps
+time_to <span style="color:#f92672">=</span> (strip<span style="color:#f92672">.</span>frame_final_end <span style="color:#f92672">-</span>  strip<span style="color:#f92672">.</span>frame_start)<span style="color:#f92672">/</span>fps
+sound_trimmed_strip <span style="color:#f92672">=</span> sound<span style="color:#f92672">.</span>limit(time_from, time_to)
+</code></pre></div><h2 id="24-the-decibel-value-of-an-animated-strip">2.4. The decibel value of an animated strip</h2>
+<p>The sound data contain the raw sampled data. To account for a changed volume level for the entire strip, you simply multiply this level with the raw data.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">max <span style="color:#f92672">=</span> sound<span style="color:#f92672">.</span>data()<span style="color:#f92672">.</span>max() <span style="color:#f92672">*</span> strip<span style="color:#f92672">.</span>volume
+</code></pre></div><p>The volume level of a strip, however can be changed and animated on a per frame basis. In section 2.2 you calculated the dB value for one frame. Thanks to the dependency graph, we can use the strip.volume value because this value will updated for that specific frame. So, to calculate the dB value for an entire animated strip, the easiest (but perhaps not the most efficient way) will be to loop through the strip frame by frame, set the playhead to that frame, retrieving the sound.data for the frame, multiplying it with the sound volume and cumulating these data into an array.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_rms</span>(samples):
+   m <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(samples<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+   rms <span style="color:#f92672">=</span>  np<span style="color:#f92672">.</span>sqrt(m)
+   <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>log10(rms)
+
+animated_samples <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>empty(shape<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>])
+<span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> range (strip<span style="color:#f92672">.</span>frame_final_start, strip<span style="color:#f92672">.</span>frame_final_end):
+   bpy<span style="color:#f92672">.</span>context<span style="color:#f92672">.</span>scene<span style="color:#f92672">.</span>frame_set(f)
+   
+   time_from <span style="color:#f92672">=</span> (f <span style="color:#f92672">-</span> strip<span style="color:#f92672">.</span>frame_start <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">/</span>fps
+   time_to   <span style="color:#f92672">=</span> (f <span style="color:#f92672">-</span> strip<span style="color:#f92672">.</span>frame_start)<span style="color:#f92672">/</span>fps
+
+   chunk <span style="color:#f92672">=</span> sound<span style="color:#f92672">.</span>limit(time_from, time_to)<span style="color:#f92672">.</span>data()
+   chunk <span style="color:#f92672">=</span> chunk <span style="color:#f92672">*</span> strip<span style="color:#f92672">.</span>volume
+   
+       
+   animated_samples <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>append(animated_samples, chunk, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;frame &#34;</span>, bpy<span style="color:#f92672">.</span>context<span style="color:#f92672">.</span>scene<span style="color:#f92672">.</span>frame_current,<span style="color:#e6db74">&#34;time:&#34;</span>, time_from, <span style="color:#e6db74">&#34;-&#34;</span>, time_to, <span style="color:#e6db74">&#34;-&#34;</span>,
+       <span style="color:#e6db74">&#34;size:&#34;</span>, len(chunk), <span style="color:#e6db74">&#34;cum&#34;</span>, len(animated_samples),
+       <span style="color:#e6db74">&#34;RMS:&#34;</span>, get_rms(chunk), <span style="color:#e6db74">&#34;volume:&#34;</span> ,strip<span style="color:#f92672">.</span>volume)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;total rms: &#34;</span>, get_rms(animated_samples))
+</code></pre></div><p>Some useful URL</p>
+<ul>
+<li><a href="https://www.sawvideo.com/index.php/news/2020/measuring-sound-levels-volume-and-loudness">https://www.sawvideo.com/index.php/news/2020/measuring-sound-levels-volume-and-loudness</a></li>
+<li><a href="http://www.sengpielaudio.com/TableOfSoundPressureLevels.htm">http://www.sengpielaudio.com/TableOfSoundPressureLevels.htm</a></li>
+<li><a href="http://www.sengpielaudio.com/calculator-soundlevel.htm">http://www.sengpielaudio.com/calculator-soundlevel.htm</a></li>
+<li><a href="http://sengpielaudio.com/calculator-gainloss.htm">http://sengpielaudio.com/calculator-gainloss.htm</a></li>
+<li><a href="http://www.sengpielaudio.com/calculator-loudness.htm">http://www.sengpielaudio.com/calculator-loudness.htm</a></li>
+<li><a href="http://sengpielaudio.com/calculator-levelchange.htm">http://sengpielaudio.com/calculator-levelchange.htm</a></li>
+<li><a href="https://archive.org/details/fundamentalsofhe00yost/mode/2up">https://archive.org/details/fundamentalsofhe00yost/mode/2up</a></li>
+</ul>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/posts/color_picker/" class="left arrow">&#8592;</a>
+		<a href="/posts/additive_color_mix/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2021-01-25 11:52:29.392788 &#43;0100 CET m=&#43;0.071896901">2021</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>
