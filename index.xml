@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Beyond the Obvious</title>
+    <link>https://hugsch.github.io/</link>
+    <description>Recent content on Beyond the Obvious</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hugsch.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Additive color diagram</title>
+      <link>https://hugsch.github.io/posts/additive_color_mix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hugsch.github.io/posts/additive_color_mix/</guid>
+      <description>In this journey, I will try to recreate the additive color mix diagram in Blender. As usual, there are several possibilities.
+1. Three colored spotlights The easiest solution is to create three spot lights. So, start Blender, delete the default cube and the light. Switch to top view; add three lights of type spotlight and a plane.
+  Figure 1: Blender setup for the three colored spot-lights solution    Switch to top view.</description>
+    </item>
+    
+    <item>
+      <title>Audio volume slider</title>
+      <link>https://hugsch.github.io/posts/audio_volume/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hugsch.github.io/posts/audio_volume/</guid>
+      <description>Every program that works with audio has some sort of volume slider. And, they all have different meanings! In Blender, you can find it as a Property of the Audio Strip. It is a number between 0 and 100. A value &amp;gt; 1 will amplify the sound; a value &amp;lt; 1 will decrease the sound level. Simple, isn&amp;rsquo;t it? But how loud is a volume level of 0.5? Is it half as loud as 1.</description>
+    </item>
+    
+    <item>
+      <title>Color Picker</title>
+      <link>https://hugsch.github.io/posts/color_picker/</link>
+      <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hugsch.github.io/posts/color_picker/</guid>
+      <description>Did you know that Blender has five different color pickers? No? You can choose between them in the Preferences panel (Edit » Preferences » Interface). They look rather intuitive to use (see Figure 1). But even for this simple tool, several questions arise and trying to answer them will get you very fast into deep Blender space!   Figure 1: Color picker. The default option is shown at the left.</description>
+    </item>
+    
+    <item>
+      <title>What to expect?</title>
+      <link>https://hugsch.github.io/about/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hugsch.github.io/about/</guid>
+      <description>Blender is a free and open source 3D creation suite. It supports the entire 3D pipeline: modeling, rigging, animation, simulation, rendering, compositing and motion tracking, video editing and 2D animation. It’s an amazing program, with a great community and a lot - I really mean a lot - of information and tutorials. So why, another documention website?
+Look at these pages as the log book of an explorer, one who discovers unknown territory.</description>
+    </item>
+    
+  </channel>
+</rss>
