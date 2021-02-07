@@ -1,75 +1,226 @@
-<!DOCTYPE html>
-<html lang="en-us">
-    <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<meta name="description" content="The five Blender Color Pickers.">
+<!doctype html>
+<html lang="en">
 
-		<title>Color Picker &middot; Beyond the Obvious</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.80.0" />
 
-		
-  		<link rel="stylesheet" href="/css/style.css">
-		<link rel="stylesheet" href="/css/fonts.css">
-		
-		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  
+  <meta name="description" content="Some description">
+  
 
-		
-		<link href="" rel="alternate" type="application/rss+xml" title="Beyond the Obvious" />
-	</head>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://hugsch.github.io/apple-touch-icon.png">
 
-    <body>
-        		<nav class="nav">
-			<div class="nav-container">
-				<a href="/">
-					<h2 class="nav-title">Beyond the Obvious</h2>
-				</a>
-				<ul>
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://hugsch.github.io/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://hugsch.github.io/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://hugsch.github.io/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://hugsch.github.io/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+   
+  <link rel="stylesheet" href="https://hugsch.github.io/css/custom.css" />
+
+  
+  <title>Color Picker | Beyond the Obvious</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  
+  <div class="container">
     
+    <a href="/">Posts</a>
     
-        <li>
-            <a href="/pages/">
-                
-                <span>About</span>
-                
-            </a>
-        </li>
+    <a href="/tags/">Tags</a>
     
-        <li>
-            <a href="/posts/">
-                
-                <span>Posts</span>
-                
-            </a>
-        </li>
+    <a href="/about/">About</a>
     
-</ul>
-			</div>
-		</nav>
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Color Picker</h1>
+<p>Did you know that Blender has five different <a href="https://docs.blender.org/manual/en/dev/interface/controls/templates/color_picker.html">color pickers</a>? No? You can choose between them in the Preferences panel (Edit » Preferences » Interface). They look rather intuitive to use (see Figure 1). But even for this simple tool, several questions arise and trying to answer them will get you very fast into deep Blender space!
 
+
+
+
+
+<figure
+  
+  style="width: 100%;"
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/color_picker.svg"
+      
+      
+        href="https://hugsch.github.io/images/color_picker.svg"
+      
+    
+    >
+  <img
+      
+        src="https://hugsch.github.io/images/color_picker.svg"
+      
         
-
-<main>
-	<div class="post">
-		<div class="post-info">
-    <span>Written by</span>
-        hugsch
-        <br>
-        <span>on&nbsp;</span><time datetime="2021-01-02 00:00:00 &#43;0000 UTC">January 2, 2021</time>
-</div>
-
-		<h1 class="post-title">Color Picker</h1>
-<div class="post-line"></div>
-
-		
-
-		<p>Did you know that Blender has five different <a href="https://docs.blender.org/manual/en/dev/interface/controls/templates/color_picker.html">color pickers</a>? No? You can choose between them in the Preferences panel (Edit » Preferences » Interface). They look rather intuitive to use (see Figure 1). But even for this simple tool, several questions arise and trying to answer them will get you very fast into deep Blender space!
-<figure>
-    <img src="/images/color_picker.svg" width="100%"/> <figcaption>
-            <h4>Figure 1: Color picker. The default option is shown at the left. The captions are from the &#39;official&#39; Blender documentation.</h4>
-        </figcaption>
+        
+         />
+    </a>
+  
+  
 </figure>
+
 </p>
 <ol>
 <li>Why do we need 5 of them? Is it only a matter of preference? Do they return different colors? Some color panels sure look brighter (1 vs 2 and 3 vs 4) than others. Why? In what aspect are they different?</li>
@@ -84,20 +235,72 @@
 <p>Let&rsquo;s begin with the first square panel (square HV+S). The cryptic name suggests that the parameters H (Hue) and V (Value) are used to create the color panel and that the third parameter S (Saturation) is set by the separate horizontal slider. In the HSV-color model, you need all three values to define a unique color. From the sliders at the bottom you know that these parameters could vary between 0 and 1. Because your plane also has a width and height of 1 unit, the X and Y coordinates of each point in this plane will also vary between 0 and 1, but only if (0,0) is at the bottom-left of the square. Is there a shading node that can give you these coordinates?</p>
 <p>Probably you should search in the Input group nodes (because this node should give you some input). It turns out that there are a quite a few nodes that could provide you with this info: the <a href="https://docs.blender.org/manual/en/latest/render/shader_nodes/input/geometry.html">Geometry node</a> and the <a href="https://docs.blender.org/manual/en/dev/render/shader_nodes/input/texture_coordinate.html">Texture Coordinate node</a>. The geometry node has (in this case) the disadvantage that it outputs world space coordinates. Moving the object in 3D-space will thus this change these coordinates, which is undesirable. You need something in the range (0 - 1), no matter where the object is located in 3D space. The Texture Coordinate node is what you&rsquo;re looking for. This node outputs for each shading point (this is a point on a surface of our object that could be hit by a light ray) an output vector with the X, Y and Z coordinates of that shading point, e.g. (0.4, 0.3, 0). Moreover, if you choose for the generated texture coordinate, these coordinates have an origin of (0,0,0) at the left-bottom of the shape; again, exactly what you want.  With the <a href="https://docs.blender.org/manual/en/latest/render/shader_nodes/converter/combine_separate.html">Separate XYZ node</a> you can split this vector into the individual X, Y and Z coordinates.</p>
 <p>Then, how do you make colors out of these numbers? Your first guess could be to use the Combine RGB node. This node accepts values for the 3 color channels and creates a mixed color from it. Unfortunately, you need three values for the full spectrum and our Z-coordinate is always zero because we paint the colors on a 2D- plane. THis Combine RGB node could well work with a cube, which has three dimensions. Besides, the color panel isn&rsquo;t simply a kind of gradient of one color going from 0 to 1. The red color, for example, occurs both at the left and right side of the square. Upon closer look, the color panel resembles the Hue color card examples; see for example <a href="https://en.wikipedia.org/wiki/Hue">Wikipedia</a>. Maybe you could use the <a href="https://docs.blender.org/manual/en/dev/render/shader_nodes/color/hue_saturation.html">Hue/Saturation node</a>. Normally this node is used to change the hue, saturation or value of a color or image.</p>
-<figure>
-    <img src="/images/color_picker.png" width="100%"/> <figcaption>
-            <h4>Figure 2: Shading nodes for recreating the (square HV&#43;S) color panel of the color picker.</h4>
-        </figcaption>
+
+
+
+
+
+<figure
+  
+  style="width: 100%;"
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/color_picker.png"
+      
+      
+        href="https://hugsch.github.io/images/color_picker.png"
+      
+    
+    >
+  <img
+      
+        src="https://hugsch.github.io/images/color_picker.png"
+      
+        
+        
+         />
+    </a>
+  
+  
 </figure>
+
 
 <p>Note that we use the color cyan as input color. According to the documentation, the Hue parameter specifies the hue <em>rotation</em> of the image. 360° are mapped to (0 to 1). The hue shifts of 0 (-180°) and 1 (+180°) have the same result. So, the Cyan color which is at about 180° will be shifted -180° and therefore becomes zero or red at the texture coordinate 0 and again to red (cyan + 180° = 360°) at texture coordinate 1.</p>
 <p>The panel is a combination of Hue and Value, with the Saturation parameter in a separate slider (Square HV + S). The Value parameter is represented by the Y axis, which runs from 1 (top) to 0 (bottom). So, you can use the Y socket to plug into the Value parameter of the Hue-Saturation-Value node.</p>
 <p>Why do you need the Gamma node? Human vision is not linear. Doubling the light intensity will not necessarily double the perceived light intensity. We are much more sensitive in the dark regions than in the light regions. Slight increments of the light energy in the shadow regions will be much more noticeable than in the lighter regions. The Gamma node takes as input a color and applies a power function; eg. x^power to it. The exponent is called gamma.</p>
-<figure>
-    <img src="/images/color_picker_gamma_correction.svg" width="100%"/> <figcaption>
-            <h4>Figure 3: Example of the Blender original color picker, a recreated one with Gamma correction and without.</h4>
-        </figcaption>
+
+
+
+
+
+<figure
+  
+  style="width: 100%;"
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/color_picker_gamma_correction.svg"
+      
+      
+        href="https://hugsch.github.io/images/color_picker_gamma_correction.svg"
+      
+    
+    >
+  <img
+      
+        src="https://hugsch.github.io/images/color_picker_gamma_correction.svg"
+      
+        
+        
+         />
+    </a>
+  
+  
 </figure>
+
 
 <p>The panel in the middle of figure 3 is with gamma encoding. The &lsquo;gamma&rsquo; exponent is set to 2.2, which is defined in the sRGB color model. So, an input intensity of 0.25 is transformed to a output intensity of 0.25<sup>2.2</sup> = 0.047. The result is thus darker (closer to zero); which is very obvious if you compare the two right-most panels of figure 3. But the darkening occurs predominantly in the shadows and midtones.</p>
 <table>
@@ -163,25 +366,19 @@
 Note that we have selected this color also in the Hue-Saturation-Value node.</p>
 <p>We will cover the circle color picker variants and the discussion of the RGB versus Hex versus HSV/HSL variants in a follow up post.</p>
 
+    </article>
+  </div>
 
-		
-	</div>
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    
+  
+  
 
-	<div class="pagination">
-		<a href="/about/" class="left arrow">&#8592;</a>
-		<a href="/posts/ffmpeg/" class="right arrow">&#8594;</a>
+  
 
-		<a href="#" class="top">Top</a>
-	</div>
-</main>
+  
+</body>
 
-
-        		<footer>
-			
-			<span>
-			&copy; <time datetime="2021-01-25 20:04:47.6199663 &#43;0100 CET m=&#43;0.062833101">2021</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
-			</span>
-		</footer>
-
-    </body>
 </html>

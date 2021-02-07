@@ -1,88 +1,232 @@
-<!DOCTYPE html>
-<html lang="en-us">
-    <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="en">
 
-		<title>color space &middot; Beyond the Obvious</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.80.0" />
 
-		
-  		<link rel="stylesheet" href="/css/style.css">
-		<link rel="stylesheet" href="/css/fonts.css">
-		
-		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  
+  <meta name="description" content="Some description">
+  
 
-		
-		<link href="/tags/color-space/index.xml" rel="alternate" type="application/rss+xml" title="Beyond the Obvious" />
-	</head>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://hugsch.github.io/apple-touch-icon.png">
 
-    <body>
-        		<nav class="nav">
-			<div class="nav-container">
-				<a href="/">
-					<h2 class="nav-title">Beyond the Obvious</h2>
-				</a>
-				<ul>
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://hugsch.github.io/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://hugsch.github.io/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://hugsch.github.io/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://hugsch.github.io/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+   
+  <link rel="stylesheet" href="https://hugsch.github.io/css/custom.css" />
+
+  
+  <title>color space | Beyond the Obvious</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>color space</h1>
+
+
+
+  <p>
+    <a href="https://hugsch.github.io/posts/color_picker/">Color Picker</a>
     
     
-        <li>
-            <a href="/pages/">
-                
-                <span>About</span>
-                
-            </a>
-        </li>
+    <br>
+    <small class="text-secondary">Jan 2, 2021</small>
     
-        <li>
-            <a href="/posts/">
-                
-                <span>Posts</span>
-                
-            </a>
-        </li>
+
+<small><code><a href="https://hugsch.github.io/tags/color-picker">color picker</a></code></small>
+
+
+<small><code><a href="https://hugsch.github.io/tags/v2.93">V2.93</a></code></small>
+
+
+<small><code><a href="https://hugsch.github.io/tags/color-space">color space</a></code></small>
+
     
-</ul>
-			</div>
-		</nav>
+    <br>
+    Did you know that Blender has five different color pickers? No? You can choose between them in the Preferences panel (Edit » Preferences » Interface). They look rather intuitive to use (see Figure 1). But even for this simple tool, several questions arise and trying to answer them will get you very fast into deep Blender space!  Why do we need 5 of them? Is it only a matter of preference?
+    
+  </p>
 
-        
+    </article>
+  </div>
 
-<main>
-    <h1>Tag color space</h1>
-	<div class="catalogue">
-		
-			<a href="https://hugsch.github.io/posts/color_picker/" class="catalogue-item">
-    <div>
-        <time datetime="2021-01-02 00:00:00 &#43;0000 UTC" class="catalogue-time">January 2, 2021</time>
-        <h1 class="catalogue-title">Color Picker</h1>
-        <div class="catalogue-line"></div>
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    
+  
+  
 
-        <p>
-            Did you know that Blender has five different color pickers? No? You can choose between them in the Preferences panel (Edit » Preferences » Interface). They look rather intuitive to use (see Figure 1). But even for this simple tool, several questions arise and trying to answer them will get you very fast into deep Blender space!   Figure 1: Color picker. The default option is shown at the left.
-        </p>
-    </div>
-</a>
+  
 
-		
-	</div>
-	
-	<div class="pagination">
-		
-		
-	
-		<span>1</span>
-	</div>
-</main>
+  
+</body>
 
-
-        		<footer>
-			
-			<span>
-			&copy; <time datetime="2021-01-25 20:04:47.6329304 &#43;0100 CET m=&#43;0.075797201">2021</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
-			</span>
-		</footer>
-
-    </body>
 </html>

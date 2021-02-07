@@ -3,38 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://hugsch.github.io/posts/additive_color_mix/</loc>
-    <lastmod>2021-01-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hugsch.github.io/</loc>
-    <lastmod>2021-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hugsch.github.io/categories/</loc>
-    <lastmod>2021-01-25T00:00:00+00:00</lastmod>
+    <loc>https://hugsch.github.io/tags/ffmpeg/</loc>
+    <lastmod>2021-02-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hugsch.github.io/tags/color/</loc>
-    <lastmod>2021-01-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hugsch.github.io/categories/color/</loc>
-    <lastmod>2021-01-25T00:00:00+00:00</lastmod>
+    <loc>https://hugsch.github.io/posts/test_files/</loc>
+    <lastmod>2021-02-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hugsch.github.io/posts/</loc>
-    <lastmod>2021-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/tags/python/</loc>
+    <lastmod>2021-02-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hugsch.github.io/tags/</loc>
-    <lastmod>2021-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/tags/strip/</loc>
+    <lastmod>2021-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/posts/time_code/</loc>
+    <lastmod>2021-01-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -43,27 +48,22 @@
   </url>
   
   <url>
-    <loc>https://hugsch.github.io/tags/python/</loc>
-    <lastmod>2021-01-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hugsch.github.io/categories/python/</loc>
-    <lastmod>2021-01-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hugsch.github.io/posts/script_editor/</loc>
     <lastmod>2021-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hugsch.github.io/categories/scripting/</loc>
+    <loc>https://hugsch.github.io/tags/scripting/</loc>
     <lastmod>2021-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hugsch.github.io/tags/ffmpeg/</loc>
+    <loc>https://hugsch.github.io/categories/</loc>
+    <lastmod>2021-01-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/categories/color/</loc>
     <lastmod>2021-01-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -95,6 +95,11 @@
   <url>
     <loc>https://hugsch.github.io/tags/v2.93/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hugsch.github.io/index_old/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>

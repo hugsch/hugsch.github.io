@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  
+  <meta name="description" content="Some description">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://hugsch.github.io/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://hugsch.github.io/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://hugsch.github.io/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://hugsch.github.io/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://hugsch.github.io/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+   
+  <link rel="stylesheet" href="https://hugsch.github.io/css/custom.css" />
+
+  
+  <title>Time code | Beyond the Obvious</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Time code</h1>
+<p>Every video editor has some kind of timeline. When a clip starts or ends is stored in a so called time code. Blender keeps track of several time codes. You can find some (but not all) of them, in the sidebar under the Time panel (see figure 1).</p>
+<p>As the name implies, the timeline represents time (seconds). But, because the unit of a video clip (or strip in Blender talk) is one frame, the timeline is sometimes labeled in frames or a combination of time and frames. For example, in Blender you can choose to show the timeline in seconds or in frames. But, even the &ldquo;seconds&rdquo;-view is in fact a combination. The time code 01:21+11 indicates &ldquo;1 minute and 21 seconds and 11 frames&rdquo;. Because each project has a frame-per-seconds <code>fps</code> parameter, you can always derive one code from the other. In a 30 fps project:</p>
+<ul>
+<li>frame 155 is at time 115/30 = 3.8333 seconds or in Blender notation: 00:03+25.</li>
+<li>time 2.5s falls within frame  2.5 * 30 = 75.</li>
+</ul>
+<p>But what about all those time codes? Why do you need them? And what do they mean?</p>
+<h2 id="1-simple-strip-with-no-cutting-or-trimming">1. Simple strip with no cutting or trimming</h2>
+<p>When you add a strip to the timeline, the UI field <code>Start</code> is set to the frame number of the play head at the position you have chosen. The <code>Duration</code> is filled with the number of frames of the strip. That&rsquo;s all! You, as a user has to point where the strip should be placed and the duration is set automatically by the number of frames that the video clip contains (see figure 1).</p>
+<p>
+
+
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    
+      
+      
+         
+      
+    <div class="carousel-item active">
+      <img src="/images/time_code/time_code_1a.png" class="d-block w-100" alt="...">
+    </div>
+    
+      
+      
+    <div class="carousel-item ">
+      <img src="/images/time_code/time_code_1b.png" class="d-block w-100" alt="...">
+    </div>
+    
+      
+      
+    <div class="carousel-item ">
+      <img src="/images/time_code/time_code_1c.png" class="d-block w-100" alt="...">
+    </div>
+    
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+
+Figure 1: Simple strip with no cutting or trimming.</p>
+<!--
+  
+
+
+
+
+
+<figure
+  class="d-block w-100"
+  
+  
+  >
+    <a 
+      
+        data-lightbox="image-/images/time_code/time_code_1a.png"
+      
+      
+        href="https://hugsch.github.io/images/time_code/time_code_1a.png"
+      
+    
+    >
+  <img
+      
+        src="https://hugsch.github.io/images/time_code/time_code_1a.png"
+      
+        alt="Figure 1: Simple strip with no cutting or trimming."
+        
+        
+         />
+    </a>
+  
+  
+    <figcaption>
+      <span class="img--caption">
+         Figure 1: Simple strip with no cutting or trimming.
+        
+      </span>
+    </figcaption>
+  
+</figure>
+
+-->
+<p>So far, so good. But, let&rsquo;s take a closer look at the info in the side panel. For a starter, it feels a little awkward that the UI field <code>Current Frame</code> indicates 0 (zero) while the play head is at frame 5. But, OK. No big deal! <code>Current Frame</code> means the position of the play head relative to the start of the active strip. So, the frame counting within the strip starts at 0.</p>
+<p>What about the field <code>End</code> (= frame 105) and the number appearing when you select the right handle (= 104). Frame 104 is definitely the last frame, not frame 35 (= Start + Duration). If the duration = 2 then the last frame is 6 (frame 5 &amp; frame 6), not 7. Only with starting frame = 0, the equation End = Start + Duration is true.</p>
+<p>It&rsquo;s also a little bit disturbing that you can change the UI field <code>Duration</code>; for example you can make the strip 50 frames long by entering that number in the <code>Duration</code> field. You&rsquo;ll get a visual indication that there is something wrong; there aren&rsquo;t 50 frames available. But nothing seems to be changed in the UI Time panel. When you shorten the duration, you will notice that the UI field <code>Strip Offset End</code> shows exactly how many frames you have shortened the clip (this is essentially trimming; see next section). To change the duration, you can also drag the left or right handle. So, it&rsquo;s possible to let the strip start before the original frame 5. But, what will you see in these non-existent frames. It turns out that you see the first and last fame as a &ldquo;still&rdquo; image. And this is exactly what the non-exposed Python fields <code>frame_still_start</code> and <code>frame_still_end</code> are used for.</p>
+<p>With the following code, you can print the different time codes that Blender uses internally (see <a href="script_editor.md">Script Editor</a> for an introduction to scripting). For this example, I have dragged the left handle of figure 1 to frame 0 and the right handle to frame 39; extending the original clip with 5 + 5 frames.</p>
+<pre><code>strip = bpy.context.scene.sequence_editor.active_strip
+print(&quot;frame_start: &quot;, strip.frame_start)
+print(&quot;frame_duration: &quot;, strip.frame_duration)
+print(&quot;frame_final_duration: &quot;, strip.frame_final_duration)
+print(&quot;frame_final_start: &quot;, strip.frame_final_start)
+print(&quot;frame_final_end: &quot;, strip.frame_final_end)
+print(&quot;frame_offset_start: &quot;, strip.frame_offset_start)
+print(&quot;frame_offset_end: &quot;, strip.frame_offset_end)
+print(&quot;frame_still_start: &quot;, strip.frame_still_start)
+print(&quot;frame_still_end: &quot;, strip.frame_still_end)
+</code></pre>
+<p>The result is:</p>
+<pre><code>frame_start:  5
+frame_duration:  30
+frame_final_duration:  40
+frame_final_start:  0
+frame_final_end:  40
+frame_offset_start:  0
+frame_offset_end:  0
+frame_still_start:  5
+frame_still_end:  5
+</code></pre>
+<p>Please note, the value of  <code>frame_still_start</code> and <code>frame_still_end</code>. You should interpret these as offsets to the original start and end. Have you ever wondered why you can add a duration to a still image? When you import a still image in the timeline, the default duration is set to 26. But of course, there is only one frame (it should be a very big waste of storage to copy the same image for 24 more frames). The solution is the field <code>frame_still_end</code>. Below you&rsquo;ll find the result of the above code run on a fresh imported still image.</p>
+<pre><code>frame_start:  0
+frame_duration:  1
+frame_final_duration:  26
+frame_final_start:  0
+frame_final_end:  26
+frame_offset_start:  0
+frame_offset_end:  0
+frame_still_start:  0
+frame_still_end:  25
+</code></pre>
+<p>The original frame duration is 1. The final duration is 26 frames; from frame 0 (<code>frame_start</code>) until <code>frame_start</code> + offset <code>frame_still_end</code> = frame 25. The amount of 26 frames seems to be hard-coded into Blender. The number of 26 seems a bit awkward and probably meant to be 25; which is more of a standard frame rate.</p>
+<p>And there are more questions. What about audio? An audio file has no frames; only sampled data (see post <a href="audio_volume.md">Audio Volume</a> for an introduction). I' ll cover this in a later post. Let&rsquo;s first tackle the problem of trimming and cutting.</p>
+<h2 id="2-strip-with-left-and-right-trimming">2. Strip with left and right trimming</h2>
+<p>Figure 2 shows a typical timeline with one strip of 30 frames (or seconds if you like). The original strip started at frame 5 and ended at frame 35. But, there has been some trimming, so that the actual strip - the one that you see in the timeline - starts at frame 12 and ends at frame 32. You can trim a strip by dragging the left and/or right handle or by changing the <code>Strip Offset Start</code> or <code>Strip Offset End</code> field in the Time panel. Or by cutting the strip, but this brings us into a new unknown territory (see section 3).</p>
+<p><img src="../../static/images/time_code.svg" alt="fig 1">Figure 2: Time codes for a trimmed strip in Blenders&rsquo;s VSE.</p>
+<p>You can find the same time codes with different names or interpretation in the Properties panel of the strip (see figure 2) and the Python interface. And here comes the confusion! The UI <code>Start</code> field is the same as the <code>frame_start</code> Python field and refers to the Start location of the original, untrimmed or uncut strip. From the UI perspective this is confusing because you &ldquo;see&rdquo; the strip starting at a different location than indicated in the <code>Start</code> field. The UI <code>Start</code> field states that the strip starts at frame 5; which is the start position of the original strip and which you can also derive from the Offset Overlay line. But the actual strip (the one that you see) starts at frame 1. This is also visible as a number if you select the left handle. This is the Python <code>frame_final_start</code> field but that field isn&rsquo;t exposed in the panel (as mentioned, you could see it if you select the left handle).</p>
+<p>The UI <code>Duration</code> and <code>End</code> field then resembles the actual situation. The original strip had a duration of 30 frames (= the Python <code>frame_duration</code>  field), but the actual (trimmed) strip is only 15 frames long (= Python <code>frame_final_duration</code> field). So, the UI <code>Duration</code> is not the same as the Python <code>frame_duration</code> field. The same holds for the <code>End</code> field. This is asking for trouble.</p>
+<p><img src="../../static/images/time_code_2.png" alt="fig 3">Figure 3: time_code.mp4 (bottom) is the strip from fig 1. time_code.001 is a different strip with different start and offsets.</p>
+<p>Let&rsquo;s try a little exercise. You want to move strip time_code.001 from fig 3 to start at the same position as time_code.mp4, which is frame 12. How should you do it? I know: you could place the play head at frame 12, select the top strip and press Shift - S to snap the strip to the current frame. Or you can eye-ball it by dragging. But neither of these methods is very accurate on a large timeline. Also, to make our case: let&rsquo;s do the exercise with the Time panel of the UI.</p>
+<p>The most obvious but wrong way is to change the strip&rsquo;s <code>Start</code> field to frame 12. This will actually move the strip further away. You have to set the actual start field. Doing it in code will also result in an error.</p>
+<pre><code>strip_bottom = bpy.context.scene.sequence_editor.sequences_all['time_code.mp4']
+strip_top = bpy.context.scene.sequence_editor.sequences_all['time_code.001']
+strip_top.frame_final_start = strip_bottom.frame_final_start    #wrong!
+</code></pre>
+<p>The code above will align the top strip with the bottom one, but unfortunately by decreasing the <code>Strip Offset Start</code>. This is not what you want. The <code>Start</code> field should be reduced by 3 frames (the difference between the actual start of both strips). And that brings us to the last confusion in this section? How can you calculate the difference between the actual starts. One technique is the following. Place the play head at the actual start of the top strip (the frame indicated when you select the left handle). Select then the bottom strip. The difference is shown in the UI field <code>Current Frame</code>. This field does not mirror the current frame in the timeline (this is shown above the play head) but the (current) frame in the actual strip where the play head is positioned.</p>
+<h1 id="negative-offsets">Negative offsets</h1>
+<p>To recapitulate: 
+You can increase the duration; either by dragging the right handle or by increasing the Duration time code in the side panel. But of course, then your strip in the timeline will reference non-existing frames in the file, so the last frame is extended (you&rsquo;ll get a still image). Strangely enough, you can also drag the left handle to the left. This will increase the duration but apparently not the start position.The newly created frames will also reference non-existing counterparts in the file, so the first image is extended.</p>
+<p>From the <a href="https://docs.blender.org/manual/en/dev/video_editing/sequencer/sidebar/strip.html#time">documentation</a>:</p>
+<ol>
+<li>Start: Changes the starting frame number of the strip, which is the same as selecting and moving the strip.</li>
+<li>Duration: Changes the length, in frames of the strip. This works by changing the end frame, which is the same as selecting and moving the strip’s right handle.</li>
+<li>End: Specifies the ending time and ending frame number for the strip.</li>
+<li>Strip Offset Start/End: Can be used to either extend the strip beyond the end frame by repeating the last frame. Or it can be used to shorten the strip, as if you were cropping the end frame. This is the same as adjusting the strip handles.</li>
+<li>Hold Offset Start/End: Offset of the uncut strip content.</li>
+<li>Current Frame: Position of the Playhead relative to the start of the active strip.</li>
+</ol>
+<p>nine time codes: frame_start, frame_duration, frame_final_duration, frame_final_start, frame_final_end, frame_offset_start, frame_offset_end, frame_still_start, frame_still_end.</p>
+
+    </article>
+  </div>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  
+</body>
+
+</html>

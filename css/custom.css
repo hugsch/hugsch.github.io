@@ -1,3 +1,7 @@
+.blog-header{
+    max-width: 970px;
+}
+
 .styled-table thead tr {
     background-color: #009879;
     color: #ffffff;
@@ -22,3 +26,6 @@
     font-weight: bold;
     color: #009879;
 }
+
+
+/* carousel */

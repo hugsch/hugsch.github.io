@@ -6,16 +6,25 @@
     <description>Recent content on Beyond the Obvious</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hugsch.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hugsch.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Additive color mix diagram</title>
-      <link>https://hugsch.github.io/posts/additive_color_mix/</link>
-      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      <title>How to create a test files?</title>
+      <link>https://hugsch.github.io/posts/test_files/</link>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://hugsch.github.io/posts/additive_color_mix/</guid>
-      <description>In this journey, I will try to recreate the additive color mix diagram in Blender. As usual, there are several possibilities.
-1. Three colored spotlights The easiest solution is to create three spot lights. So, start Blender, delete the default cube and the light. Switch to top view; add three lights of type spotlight and a plane.
-  Figure 1: Blender setup for the three colored spot-lights solution    Switch to top view.</description>
+      <guid>https://hugsch.github.io/posts/test_files/</guid>
+      <description>Sometimes you need a test video or test image with a specific resolution, duration or framerate and specific content, e.g. gradient color, TV test image, counter or time code.
+1. Generate test video with ffmpeg FFMPEG is a command line tool for handling (decode, encode, convert, &amp;hellip;) video and audio files. It is used by many commercial and free software products, including Blender. The core is the FFMPEG program, together with a video &amp;amp; audio player (FFPLAY) and a stream analyzer (FFPROBE).</description>
+    </item>
+    
+    <item>
+      <title>Time code</title>
+      <link>https://hugsch.github.io/posts/time_code/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hugsch.github.io/posts/time_code/</guid>
+      <description>Every video editor has some kind of timeline. When a clip starts or ends is stored in a so called time code. Blender keeps track of several time codes. You can find some (but not all) of them, in the sidebar under the Time panel (see figure 1).
+As the name implies, the timeline represents time (seconds). But, because the unit of a video clip (or strip in Blender talk) is one frame, the timeline is sometimes labeled in frames or a combination of time and frames.</description>
     </item>
     
     <item>
@@ -54,7 +63,16 @@ You can use the built-in text editor to write and test your code.</description>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://hugsch.github.io/posts/color_picker/</guid>
-      <description>Did you know that Blender has five different color pickers? No? You can choose between them in the Preferences panel (Edit » Preferences » Interface). They look rather intuitive to use (see Figure 1). But even for this simple tool, several questions arise and trying to answer them will get you very fast into deep Blender space!   Figure 1: Color picker. The default option is shown at the left.</description>
+      <description>Did you know that Blender has five different color pickers? No? You can choose between them in the Preferences panel (Edit » Preferences » Interface). They look rather intuitive to use (see Figure 1). But even for this simple tool, several questions arise and trying to answer them will get you very fast into deep Blender space!  Why do we need 5 of them? Is it only a matter of preference?</description>
+    </item>
+    
+    <item>
+      <title>Homepage</title>
+      <link>https://hugsch.github.io/index_old/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hugsch.github.io/index_old/</guid>
+      <description>Look at these pages as the log book of an explorer, one who discovers unknown territory. Magnificent views but also sometimes -most of the time- harsh environment. Like so many others, I wanted to give Blender a try, a few years ago. So, I downloaded the program, opened it and then after a few hours closed it, not to reopen it for the next several months. It was not that I wasn’t thrilled: looking at a floating 3D-cube that I could actually move and rotate!</description>
     </item>
     
     <item>
